@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+
+<!-- SECTION -->
+<div class="section">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-5 col-md-push-2">
+                <div id="product-main-img">
+                    <div class="product-preview">
+                        <img src="{{ produto.imagem }}" alt="">
+                    </div>
+                </div>
+            </div>
+  
+
+
+            <div class="col-md-2  col-md-pull-5">
+                <div id="product-imgs">
+                    <div class="product-preview">
+                        <img src="{{ produto.imagem }}" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Detalhes do produto -->
+            
+            <div class="col-md-5">
+                <div class="product-details">
+                    <h2 class="product-name">{{ produto.nome }}</h2>
+                    <div>
+                        <div class="product-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="product-price">${{ produto.preco }}</h3>
+                    </div>
+
+                    <p>{{ produto.descricao }}</p>
+
+                    <div class="add-to-cart">
+                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Adicionar</button>
+                    </div>
+
+                    <ul class="product-btns">
+                        <li><a href="#"><i class="fa fa-heart-o"></i> Favoritar</a></li>
+                    </ul>
+
+                    <ul class="product-links">
+                        <li>Categoria:</li>
+                        <li><a href="#">{{ produto.categoria }}</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <!-- /Product details -->
+            
+            
+
+        </div>
+    </div>
+</div>
+<!-- /SECTION -->
+
+
+{% endblock %}
