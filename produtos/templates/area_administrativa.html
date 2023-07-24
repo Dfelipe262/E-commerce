@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+
+<!-- SEÇÃO -->
+<div class="section" id="section1">
+    <div class="container">
+        <div class="row" id="row1">
+            <div id="store" class="col-md-9">
+                <div class="row">
+
+
+                    {% for produto in produtos %}
+                    <div class="col-md-4 col-xs-6">
+                        <div class="product">
+                            <div class="product-img">
+                                <img src="{{ produto.imagem }}" alt="">
+                            </div>
+                            <div class="product-body">
+                                <p class="product-category">{{ produto.categoria }}</p>
+                                <h3 class="product-name"><a href="#">{{ produto.nome }}</a></h3>
+                                <h4 class="product-price">${{ produto.preco }}</h4>
+                                <div class="product-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="product-btns">
+                                    <a href="{% url 'produto_editar' id=produto.id %}" class="btn btn-primary btn-sm">Editar</a>
+                                    <a href="{% url 'produto_remover' id=produto.id %}" class="btn btn-danger btn-sm">Remover</a>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /SEÇÃO -->
+
+{% endblock %}

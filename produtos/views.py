@@ -10,9 +10,19 @@ def pagina_inicial(request):
     }
     return render(request, "pagina_inicial.html",context)
 
+def area_administrativa(request):
+    produtos = Produto.objects.all()
+    context = {
+        'produtos' : produtos
+    }
+    return render(request, "area_administrativa.html",context)
+
 def produto_detalhes(request, id):
     produto = get_object_or_404(Produto, id=id)
-    return render(request, 'vizualizar.html', {'produto': produto}) #pega as infos só do produto clicado
+    return render(request, 'produto_detalhes.html', {'produto': produto}) #pega as infos só do produto clicado
+
+
+
 
 #CRUD PRODUTO
 
@@ -33,7 +43,7 @@ def produto_editar(request, id):
 def produto_remover(request, id):
     produto = get_object_or_404(Produto, id=id)
     produto.delete()
-    return redirect('produto_listar') # procure um url com o nome 'produto_listar'
+    return redirect('area_administrativa') # procure um url com o nome 'produto_listar'
 
 
 def produto_criar(request):
@@ -54,7 +64,7 @@ def produto_listar(request):
     context ={
         'produtos':produtos
     }
-    return render(request, "vizualizar.html",context)
+    return render(request, "produto_listar.html",context)
 
 
 

@@ -2,43 +2,48 @@
 
 {% block main %}
 
- <div style="width: 700px; background-color: aquamarine;">
-    <h2> ADICIONAR PRODUTO </h2>
-       
-    <form method="post" action="{% url 'produto_criar' %}" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div class="mb-3">
-            <label for="nome" class="form-label">Nome</label>
-            {{ form.nome }}
-        </div>
-        
-        <div class="mb-3">
-            <label for="categoria" class="form-label">Categoria</label>
-            {{ form.categoria }}
-        </div>
 
-        <div class="mb-3">
-            <label for="descricao" class="form-label">Descrição</label>
-            {{ form.descricao }}
-        </div>
-        
+    <div style="width: 700px; background-color: rgb(135, 172, 253); margin-left: 300px; padding: 20px; margin-top: 50px; border-radius: 10px;">
+        <h2> ADICIONAR PRODUTO </h2>
+           
+        <form method="post" action="{% url 'produto_criar' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+    
+            <div class="mb-3" style="margin-bottom: 15px;">
+                <label for="nome" class="form-label">Nome</label>
+                {{ form.nome }}
+            </div>
+            
+            <div class="mb-3" style="margin-bottom: 15px;">
+                <label for="categoria" class="form-label">Categoria</label>
+                {{ form.categoria }}
+            </div>
+    
+            <div class="mb-3" style="margin-bottom: 15px;">
+                <label for="descricao" class="form-label">Descrição</label>
+                {{ form.descricao }}
+            </div>
+            
+    
+            <div class="mb-3" style="margin-bottom: 15px;">
+                <label for="preco" class="form-label">Preço</label>
+                {{ form.preco }}
+            </div>
+    
+    
+            <div class="mb-3" style="margin-bottom: 15px;">
+                <label for="imagem" class="form-label">imagem</label>
+                {{ form.imagem }}
+            </div>
+    
+    
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    
+     </div>
 
-        <div class="mb-3">
-            <label for="preco" class="form-label">Preço</label>
-            {{ form.preco }}
-        </div>
 
-
-        <div class="mb-3">
-            <label for="imagem" class="form-label">imagem</label>
-            {{ form.imagem }}
-        </div>
-
-
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
-
- </div>
+ 
         
 {% endblock %}
    

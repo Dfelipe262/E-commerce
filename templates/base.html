@@ -41,7 +41,7 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="#" class="logo" style="color: white; font-size: 42px;">
+								<a href="{% url 'pagina_inicial' %}" class="logo" style="color: white; font-size: 42px;">
 									TechVille
 								</a>
 							</div>
@@ -108,12 +108,13 @@
 			<div class="container">
 				<div id="responsive-nav">
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">Inicio</a></li>
-						<li><a href="#">Diversos</a></li>
+						<li class="active"><a href="{% url 'pagina_inicial' %}">Inicio</a></li>
+						<li><a href="{% url 'produto_listar' %}">Diversos</a></li>
 						<li><a href="#">Notebooks</a></li>
 						<li><a href="#">Celulares</a></li>
 						<li><a href="#">Cameras</a></li>
 						<li><a href="#">Acessórios</a></li>
+						<li><a href="{% url 'area_administrativa' %}">Área administrativa</a></li>
 					</ul>
 				</div>
 			</div>
