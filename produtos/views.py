@@ -33,7 +33,7 @@ def produto_editar(request, id):
         form = ProdutoForm(request.POST, request.FILES, instance=produto)
         if form.is_valid():
             form.save()
-            return redirect('produto_listar')
+            return redirect('area_administrativa')
     else:
         form = ProdutoForm(instance=produto)
 

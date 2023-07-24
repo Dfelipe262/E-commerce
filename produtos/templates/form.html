@@ -6,7 +6,7 @@
     <div style="width: 700px; background-color: rgb(135, 172, 253); margin-left: 300px; padding: 20px; margin-top: 50px; border-radius: 10px;">
         <h2> ADICIONAR PRODUTO </h2>
            
-        <form method="post" action="{% url 'produto_criar' %}" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
     
             <div class="mb-3" style="margin-bottom: 15px;">
