@@ -43,7 +43,7 @@ def produto_editar(request, id):
 def produto_remover(request, id):
     produto = get_object_or_404(Produto, id=id)
     produto.delete()
-    return redirect('area_administrativa') # procure um url com o nome 'produto_listar'
+    return redirect('area_administrativa') 
 
 
 def produto_criar(request):
