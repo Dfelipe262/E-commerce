@@ -30,16 +30,18 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <div class="product-btns">
-                                    <a href="{% url 'produto_editar' id=produto.id %}" class="btn btn-primary btn-sm">Editar</a>
-                                    <a href="{% url 'produto_remover' id=produto.id %}" class="btn btn-danger btn-sm">Remover</a>
+                                    <a href="{% url 'produto_editar' id=produto.id %}" class="btn btn-primary btn-sm" style="border-radius: 20px;">Editar</a>
+                                    <a href="{% url 'produto_remover' id=produto.id %}" class="btn btn-danger btn-sm" style="border-radius: 20px;">Remover</a>
                                 </div>
                             </div> 
                         </div>
                     </div>
                     {% endfor %}
 
-
                 </div>
+
+                <a href="{% url 'produto_criar' %}" class="btn btn-primary btn-sm" style="margin-top: 30px; border-radius: 20px;">Cadastrar novo produto</a>
+                
             </div>
         </div>
     </div>
